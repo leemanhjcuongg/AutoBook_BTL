@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 
 public class BrandFragment extends Fragment {
     ListView lvBrandCar;
+//    Button btnSort;
     ArrayList<Car> lstBrandCar = new ArrayList<>();
     CarAdapter carAdapter;
     Context context;
@@ -37,6 +39,7 @@ public class BrandFragment extends Fragment {
         parentActivity = (MainActivity) getActivity();
 
         lvBrandCar = view.findViewById(R.id.lvBrand);
+//        btnSort = view.findViewById(R.id.btnSort);
 
         databaseData = new DatabaseData(inflater.getContext());
         lstBrandCar = databaseData.getCarbyBrand(); // lấy toàn bộ ArrayList Car
@@ -52,6 +55,14 @@ public class BrandFragment extends Fragment {
 //                parentActivity.finish();
             }
         });
+//        btnSort.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                lstBrandCar = databaseData.getCarNameAsc();
+//                carAdapter = new CarAdapter(inflater.getContext(),lstBrandCar);
+//                lvBrandCar.setAdapter(carAdapter);
+//            }
+//        });
         return view;
     }
 }

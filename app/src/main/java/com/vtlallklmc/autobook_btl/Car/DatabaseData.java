@@ -146,6 +146,31 @@ public class DatabaseData { //Lớp này để tạo các phương thức khai t
             lstCar.add(c);
         }
         return lstCar;
+    }public ArrayList<Car> getCarNameAsc(){ //tương tự như phương thức lấy tất cả xe chỉ thay đổi câu lệnh SELECT
+        ArrayList<Car> lstCar = new ArrayList<>();
+
+        SQLiteDatabase db = carDBHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM "+CarDBHelper.TB_NAME+" ORDER BY "+CarDBHelper.NAME+" ASC",null);
+        while (cursor.moveToNext()){
+            Car c = new Car(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getInt(5),
+                    cursor.getInt(6),
+                    cursor.getInt(7),
+                    cursor.getInt(8),
+                    cursor.getInt(9),
+                    cursor.getString(10),
+                    cursor.getString(11),
+                    cursor.getInt(12),
+                    cursor.getDouble(13)
+            );
+            lstCar.add(c);
+        }
+        return lstCar;
     }
     public Car searchCar(String query){ //Tìm xe, khởi tạo đối tượng Car truyền vào String query (tên xe cần tìm)
 

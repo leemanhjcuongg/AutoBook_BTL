@@ -81,7 +81,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent bookingIntent = new Intent(DetailActivity.this,BookingActivity.class);
                 bookingIntent.putExtra("name",car.getName());
                 startActivity(bookingIntent);
-                finish();
+//                finish();
             }
         });
         btnBack.setOnClickListener(new View.OnClickListener() {
