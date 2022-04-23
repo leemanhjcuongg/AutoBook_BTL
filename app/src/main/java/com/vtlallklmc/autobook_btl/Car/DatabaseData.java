@@ -73,7 +73,7 @@ public class DatabaseData { //Lớp này để tạo các phương thức khai t
         ArrayList<Car> lstCar = new ArrayList<>();
 
         SQLiteDatabase db = carDBHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM "+CarDBHelper.TB_NAME+" ORDER BY nam_sx DESC LIMIT 10",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM "+CarDBHelper.TB_NAME+" ORDER BY nam_sx DESC",null);
         while (cursor.moveToNext()){
             Car c = new Car(
                     cursor.getInt(0),

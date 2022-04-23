@@ -35,13 +35,52 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:ignore="InvalidId">
+
+        <EditText
+            android:id="@+id/edtFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Từ"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edtTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Đến"
+            android:inputType="number" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loc"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:text="Lọc xe theo khoảng giá"
+        android:visibility="gone" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_nav"
-        android:layout_below="@+id/header"
+        android:layout_below="@+id/btnLoc"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -33,13 +34,40 @@
             android:text="03728437xx" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@color/teal_200"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+        <ImageButton
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@color/teal_200"
+            android:layout_marginRight="26dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="26dp"
-        android:layout_marginLeft="26dp"
         android:enabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,10 +82,10 @@
         android:id="@+id/btnLogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
         android:layout_marginTop="44dp"
         android:layout_marginRight="26dp"
-        android:layout_marginLeft="26dp"
         android:text="Đăng xuất"
         android:textSize="16dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 </LinearLayout>

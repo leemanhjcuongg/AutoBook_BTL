@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 public class BrandFragment extends Fragment {
     ListView lvBrandCar;
 //    Button btnSort;
+    Switch swSort;
     ArrayList<Car> lstBrandCar = new ArrayList<>();
     CarAdapter carAdapter;
     Context context;
@@ -40,6 +43,7 @@ public class BrandFragment extends Fragment {
 
         lvBrandCar = view.findViewById(R.id.lvBrand);
 //        btnSort = view.findViewById(R.id.btnSort);
+//        swSort = view.findViewById(R.id.swSort);
 
         databaseData = new DatabaseData(inflater.getContext());
         lstBrandCar = databaseData.getCarbyBrand(); // lấy toàn bộ ArrayList Car
@@ -55,6 +59,20 @@ public class BrandFragment extends Fragment {
 //                parentActivity.finish();
             }
         });
+//        swSort.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if(b){
+//                    lstBrandCar = databaseData.getCarNameAsc(); // lấy toàn bộ ArrayList Car
+//                    carAdapter = new CarAdapter(inflater.getContext(),lstBrandCar); //lắp ArrayList vào Adapter
+//                    lvBrandCar.setAdapter(carAdapter); // truyền Adapter vào listview để hiển thị lên
+//                }else{
+//                    lstBrandCar = databaseData.getCarbyBrand(); // lấy toàn bộ ArrayList Car
+//                    carAdapter = new CarAdapter(inflater.getContext(),lstBrandCar); //lắp ArrayList vào Adapter
+//                    lvBrandCar.setAdapter(carAdapter); // truyền Adapter vào listview để hiển thị lên
+//                }
+//            }
+//        });
 //        btnSort.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

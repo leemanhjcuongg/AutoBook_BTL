@@ -14,12 +14,14 @@
         android:textSize="29dp"
         android:textStyle="bold" />
 
-<!--    <Button-->
-<!--        android:id="@+id/btnSort"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Sắp xếp A-Z"-->
-<!--        android:layout_marginLeft="26dp"/>-->
+
+    <Switch
+        android:id="@+id/swSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:text="SX"
+        android:visibility="gone" />
 
     <ListView
         android:id="@+id/lvBrand"

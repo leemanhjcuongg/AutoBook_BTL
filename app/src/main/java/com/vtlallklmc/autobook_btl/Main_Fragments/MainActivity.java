@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     AutoCompleteTextView searchBar;
     ImageButton btnSearch;
     ArrayList<String> lstCarResult = new ArrayList<>();
+    EditText from, to;
+    Button loc;
 
     DatabaseData databaseData;
 
@@ -45,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         //anh xa
         navigationView = findViewById(R.id.bottom_nav);
         viewPager = findViewById(R.id.view_pager);
+
+        from = findViewById(R.id.edtFrom);
+        to = findViewById(R.id.edtTo);
+        loc = findViewById(R.id.btnLoc);
 
         setUpViewPager();
 
@@ -136,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void setUpViewPager(){
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
